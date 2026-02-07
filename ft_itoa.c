@@ -21,7 +21,7 @@ char	*ft_itoa(int n)
 
 	is_negative = 0;
 	nbr = n;
-	digits = ft_countdigits(nbr);
+	digits = ft_countdigits(nbr, 10);
 	if (nbr < 0)
 	{
 		nbr *= -1;
@@ -31,7 +31,7 @@ char	*ft_itoa(int n)
 	if (str == NULL)
 		return (NULL);
 	str[digits] = '\0';
-	ft_fillstr(str, digits, nbr);
+	ft_fillstr(str, digits, nbr, 10);
 	if (is_negative)
 		str[0] = '-';
 	return (str);

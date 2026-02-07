@@ -1,33 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countdigits.c                                   :+:      :+:    :+:   */
+/*   ft_memaddr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdiaz-ec <jdiaz-ec@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/06 19:05:54 by jdiaz-ec          #+#    #+#             */
-/*   Updated: 2026/02/06 19:05:56 by jdiaz-ec         ###   ########.fr       */
+/*   Created: 2026/02/07 20:04:39 by jdiaz-ec          #+#    #+#             */
+/*   Updated: 2026/02/07 20:04:42 by jdiaz-ec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_countdigits(long n, int base)
+void	ft_memaddr(uintptr_t addr)
 {
-	int	digits;
+	unsigned char *s;
 
-	digits = 1;
-	if (n < 0)
-	{
-		digits++;
-		n *= -1;
-	}
-	if (n == 0)
-		return (1);
-	while (n >= base)
-	{
-		digits++;
-		n /= base;
-	}
-	return (digits);
+	s = (unsigned char *)addr;
+	printf("%u\n", *s);
 }

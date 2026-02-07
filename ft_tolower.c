@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_countdigits.c                                   :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdiaz-ec <jdiaz-ec@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/06 19:05:54 by jdiaz-ec          #+#    #+#             */
-/*   Updated: 2026/02/06 19:05:56 by jdiaz-ec         ###   ########.fr       */
+/*   Created: 2026/02/07 18:57:35 by jdiaz-ec          #+#    #+#             */
+/*   Updated: 2026/02/07 18:57:38 by jdiaz-ec         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_countdigits(long n, int base)
+void	ft_tolower(char *s)
 {
-	int	digits;
+	int	i;
 
-	digits = 1;
-	if (n < 0)
+	i = 0;
+	while (s[i] != '\0')
 	{
-		digits++;
-		n *= -1;
+		if (s[i] >= 'A' && s[i] <= 'Z')
+			s[i] += 32;
+		i++;
 	}
-	if (n == 0)
-		return (1);
-	while (n >= base)
-	{
-		digits++;
-		n /= base;
-	}
-	return (digits);
 }

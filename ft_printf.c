@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 int	ft_printf(const char *format, ...)
 {
@@ -39,8 +38,10 @@ int	ft_printf(const char *format, ...)
 
 int	main(void)
 {
-	int	a = 2147483647;
-	char b[] = "Well well well";
-	ft_printf("d: %d\nstring: %s\n", a, b);
-	printf("");
+	int	a = 3553;
+	int	*ptr;
+
+	ptr = &a;
+	ft_printf("u: %p\n", ptr);
+	printf("native: %p\n", ptr);
 }

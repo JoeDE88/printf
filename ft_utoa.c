@@ -12,25 +12,16 @@
 
 #include "ft_printf.h"
 
-char	*ft_utoa(size_t n, int base)
+char	*ft_utoa(unsigned int n, int base)
 {
 	int		digits;
-	char 	*str;
-	base = 0;
-	digits = ft_countdigits(n);
+	char	*str;
+
+	digits = ft_countdigits(n, base);
 	str = (char *)malloc((digits + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	str[digits] = '\0';
-	ft_fillstr(str, digits, n);
+	ft_fillstr(str, digits, n, base);
 	return (str);
-}
-
-int main(void)
-{
-	size_t	a = 244294294967295;
-	char	*p;
-	p = ft_utoa(a, 10);
-	printf("utoa: %s\n", p);
-	free(p); 
 }

@@ -16,15 +16,18 @@
 # include <stdarg.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include <stdint.h>
 
 int		ft_printf(const char *str, ...);
 size_t	ft_strlen(const char *str);
 char	*ft_itoa(int n);
-char	*ft_utoa(size_t n, int base);
+char	*ft_utoa(unsigned int n, int base);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
 int		ft_convert(va_list args, char specifier);
-int		ft_countdigits(long n);
-void	ft_fillstr(char *s, int digits, long n);
+int		ft_countdigits(long n, int base);
+void	ft_fillstr(char *s, int digits, long n, int base);
+void	ft_tolower(char *s);
+void	ft_memaddr(uintptr_t addr);
 
 #endif
