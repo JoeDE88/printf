@@ -14,32 +14,22 @@
 
 int	ft_convert(va_list args, char specifier)
 {
-	char	*s;
+	int		total;
 
+	total = 0;
 	if (specifier == 'd' || specifier == 'i')
-	{
-		s = ft_itoa(va_arg(args, int));
-		ft_putstr_fd(s, 1);
-	}
+		total += ft_printint(va_arg(args, int));
 	if (specifier == 'c')
-		ft_putchar_fd(va_arg(args, int), 1);
+		total += ft_printchar(va_arg(args, int));
 	if (specifier == 's')
-		ft_putstr_fd(va_arg(args, char *), 1);
+		total += ft_printstr(va_arg(args, char *), specifier);
 	if (specifier == 'u')
-	{
-		s = ft_utoa(va_arg(args, unsigned int), 10);
-		ft_putstr_fd(s, 1);
-	}
+		total += ft_printunint(va_arg(args, unsigned int), 10, specifier);
 	if (specifier == 'X' || specifier == 'x')
-	{
-		s = ft_utoa(va_arg(args, unsigned int), 16);
-		if (specifier == 'x')
-			ft_tolower(s);
-		ft_putstr_fd(s, 1);
-	}
+		total += ft_printunint(va_arg(args, unsigned int), 16, specifier);
 	if (specifier == 'p')
-	{
-		ft_memaddr(va_arg(args, uintptr_t));
-	}
-	return (1);
+		total += ft_printaddr(va_arg(args, uintptr_t));
+	if (specifier == '%')
+		total += ft_printchar('%');
+	return (total);
 }

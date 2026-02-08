@@ -17,31 +17,33 @@ int	ft_printf(const char *format, ...)
 	va_list		args;
 	size_t		i;
 	size_t		num_args;
+	int			total;
 
 	i = 0;
+	total = 0;
 	num_args = ft_strlen(format);
 	va_start(args, format);
 	while (i < num_args)
 	{
 		if (format[i] == '%')
 		{
+			total += ft_convert(args, format[i + 1]);
 			i++;
-			ft_convert(args, format[i]);
 		}
 		else
-			ft_putchar_fd(format[i], 1);
+			total += ft_printchar(format[i]);
 		i++;
 	}
 	va_end(args);
-	return (0);
+	return (total);
 }
 
 int	main(void)
 {
-	int	a = 3553;
-	int	*ptr;
+	unsigned int a = 4294967295;
 
-	ptr = &a;
-	ft_printf("u: %p\n", ptr);
-	printf("native: %p\n", ptr);
+	void *ptr = NULL;
+	ft_printf("\ntotal mine: %d\n", ft_printf("%s %% %c %s %u %", (char *)ptr, 49, "", a));
+	printf("\n");
+	printf("\ntotal native: %d\n", printf("%s %% %c %s %u", (char *)ptr, 49, "", a));
 }

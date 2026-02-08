@@ -20,14 +20,14 @@
 
 int		ft_printf(const char *str, ...);
 size_t	ft_strlen(const char *str);
-char	*ft_itoa(int n);
-char	*ft_utoa(unsigned int n, int base);
-void	ft_putchar_fd(char c, int fd);
-void	ft_putstr_fd(char *s, int fd);
+int		ft_printint(int n);
+int		ft_printunint(unsigned int n, int base, char spec);
+int		ft_printchar(char c);
+int		ft_printstr(char *s, char spec);
 int		ft_convert(va_list args, char specifier);
 int		ft_countdigits(long n, int base);
 void	ft_fillstr(char *s, int digits, long n, int base);
 void	ft_tolower(char *s);
-void	ft_memaddr(uintptr_t addr);
+int		ft_printaddr(uintptr_t addr);
 
 #endif
