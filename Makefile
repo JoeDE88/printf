@@ -8,6 +8,10 @@ cc = gcc
 
 CCFLAGS = -Wall -Wextra -Werror
 
+INC_DIR = .
+
+CPPFLAGS = -I$(INC_DIR)
+
 RM = rm -f
 
 ARNAME = ar rcs $(NAME)
@@ -21,7 +25,7 @@ $(NAME) : $(OBJS)
 	$(RANNAME)
 
 %.o: %.c
-	$(CC) $(CCFLAGS) -o $@ -c $<
+	$(CC) $(CPPFLAGS) $(CCFLAGS) -o $@ -c $<
 
 .PHONY: clean
 
