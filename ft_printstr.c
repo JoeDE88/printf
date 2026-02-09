@@ -21,11 +21,11 @@ int	ft_printstr(char *s, char spec)
 		write(1, "(null)", 6);
 		return (6);
 	}
+	if (spec == 'x')
+		ft_tolower(s);
 	i = 0;
 	while (s[i] != '\0')
 	{
-		if (spec == 'x' && (s[i] >= 'A' && s[i] <= 'Z'))
-			s[i] += 32;
 		write(1, &s[i], 1);
 		i++;
 	}
