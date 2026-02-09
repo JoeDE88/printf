@@ -40,15 +40,3 @@ int	ft_printf(const char *format, ...)
 	va_end(args);
 	return (total);
 }
-
-int	main(void)
-{
-	//unsigned int a = 4294967295;
-
-	//void *ptr = NULL;
-	/* ft_printf("\ntotal mine: %d\n", ft_printf("%s %% %c %s %u %d", (char *)ptr, 49, "", a));
-	printf("\n");
-	printf("\ntotal native: %d\n", printf("%s %% %c %s %u", (char *)ptr, 49, "", a)); */
-	ft_printf("%x\n", 655);
-	//printf(NULL);
-}
