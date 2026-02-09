@@ -1,4 +1,4 @@
-SRC = ft_convert.c ft_countdigits.c ft_fillstr.c ft_printaddr.c ft_printchar.c ft_printf.c ft_printf.h ft_printint.c ft_printstr.c ft_printunint.c ft_strlen.c ft_tolower.c
+SRC = ft_convert.c ft_countdigits.c ft_fillstr.c ft_printaddr.c ft_printchar.c ft_printf.c ft_printint.c ft_printstr.c ft_printunint.c ft_strlen.c ft_tolower.c
 
 OBJS := $(SRC:%.c=%.o)
 
