@@ -12,17 +12,46 @@
 
 #include "ft_printf.h"
 
+int	ft_countlong(uintptr_t n)
+{
+	int	digits;
+
+	digits = 1;
+	while (n >= 16)
+	{
+		digits++;
+		n /= 16;
+	}
+	return (digits);
+}
+
+void	ft_filllong(char *s, int digits, uintptr_t n)
+{
+	int	rem;
+
+	while (digits > 0)
+	{
+		rem = n % 16;
+		if (rem < 10)
+			s[digits - 1] = rem + 48;
+		else
+			s[digits - 1] = rem + 55;
+		digits--;
+		n /= 16;
+	}
+}
+
 char	*ft_ptrtoa(uintptr_t addr)
 {
 	int		digits;
 	char	*str;
 
-	digits = ft_countdigits(addr, 16);
+	digits = ft_countlong(addr);
 	str = (char *)malloc((digits + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
 	str[digits] = '\0';
-	ft_fillstr(str, digits, addr, 16);
+	ft_filllong(str, digits, addr);
 	return (str);
 }
 

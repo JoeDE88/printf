@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: jdiaz-ec <jdiaz-ec@student.42madrid.c      +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2026/02/10 14:09:59 by jdiaz-ec          #+#    #+#              #
+#    Updated: 2026/02/10 14:10:04 by jdiaz-ec         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 SRC = ft_convert.c ft_countdigits.c ft_fillstr.c ft_printaddr.c ft_printchar.c ft_printf.c ft_printint.c ft_printstr.c ft_printunint.c ft_strlen.c ft_tolower.c
 
 OBJS := $(SRC:%.c=%.o)

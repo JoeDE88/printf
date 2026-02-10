@@ -18,9 +18,9 @@ int	ft_printf(const char *format, ...)
 	size_t		i;
 	int			total;
 
-	if (!format)
-		return (-1);
 	i = 0;
+	if (!format || (format[i] == '%' && format[i + 1] == '\0'))
+		return (-1);
 	total = 0;
 	va_start(args, format);
 	while (format[i] != '\0')

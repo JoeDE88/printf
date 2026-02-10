@@ -29,7 +29,7 @@ void	ft_fillstr(char *s, int digits, long n, int base)
 	{
 		while (digits > 0)
 		{
-			rem = n % 16;
+			rem = n % base;
 			if (rem < 10)
 				s[digits - 1] = rem + 48;
 			else

@@ -21,7 +21,7 @@ int		ft_printf(const char *str, ...);
 size_t	ft_strlen(const char *str);
 int		ft_printint(int n);
 int		ft_printunint(unsigned int n, int base, char spec);
-int		ft_printchar(char c);
+int		ft_printchar(int c);
 int		ft_printstr(char *s, char spec);
 int		ft_convert(va_list args, char specifier);
 int		ft_countdigits(long n, int base);
